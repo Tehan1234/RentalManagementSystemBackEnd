@@ -45,13 +45,8 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public boolean deleteById(Long id) {
-        if (customerRepository.existsById(id)) {
-            customerRepository.deleteById(id);
-            return true;
-        } else {
-            return false;
-        }
+    public void deleteById(Long customerId) {
+        customerRepository.deleteById(customerId);
     }
 
     @Override

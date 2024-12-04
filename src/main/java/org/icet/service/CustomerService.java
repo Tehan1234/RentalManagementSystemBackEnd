@@ -9,4 +9,10 @@ public interface CustomerService {
     void addNewCustomer(Customer customer);
 
     List<Customer> getAllCustomers();
+
+    Customer getByName(String name);
+
+    public boolean deleteById(Long id);
+
+    void updateCustomer(Customer customer);
 }

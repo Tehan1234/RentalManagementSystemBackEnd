@@ -28,6 +28,26 @@ public class CustomerController {
         return customerService.getAllCustomers();
     }
 
+    @GetMapping("/searchByName/{name}")
+    public Customer getByName(@PathVariable String name) {
+        return customerService.getByName(name);
+    }
+
+    @DeleteMapping("/delete-by-id/{id}")
+    public String deleteById(@PathVariable Long id){
+        boolean isDeleted = customerService.deleteById(id);
+        if(isDeleted){
+            return "student deleted successfully";
+        }else{
+            return  "student didn't deleted successfully";
+        }
+
+    }
+
+    @PutMapping("/update-customer")
+    public void updateCustomer(@RequestBody Customer customer) {
+        customerService.updateCustomer(customer);
+    }
 
 
 
